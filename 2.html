@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Redirect based on parameter
+        function redirectBasedOnParam() {
+            const redirectUrl = getQueryParam('url');
+            if (redirectUrl) {
+                window.location.href = redirectUrl;
+            } else {
+                console.log('No URL parameter provided for redirection.');
+            }
+        }
+
+        // Call the redirect function after the page loads
+        window.onload = redirectBasedOnParam;
+    </script>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+</body>
+</html>
